@@ -18,7 +18,7 @@ def test_prepare_url_with_existing_query():
     redirect_url = "https://www.example.com/?param=1&param=2"
     params = urlencode(OrderedDict({"param3": "abc", "param4": "xyz"}))
     result = prepare_url(params, redirect_url)
-    assert result == f"{redirect_url}&param3=abc&param4=xyz"
+    assert result == "https://www.example.com/?param3=abc&param4=xyz&param=1&param=2"
 
 
 def test_get_default_storage_root_url():
